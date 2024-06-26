@@ -2,11 +2,11 @@
 
 FROM python:3.9-slim
 
-WORKDIR /app
+COPY . .
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-COPY . .
+WORKDIR /app
 
-CMD ["python", "app/main.py"]
+CMD ["python", "main.py"]
